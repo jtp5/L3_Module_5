@@ -1,6 +1,7 @@
 package data_structures;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 /**
  * Copyright The League of Amazing Programmers 2013-2017 Level 3 Two ArrayList
@@ -28,7 +29,12 @@ public class RemovingStuffFromArrayLists {
 		System.out.println(stuffIFoundInTheYard.size());
 
 		/* TODO 1: Clean out the dirt but keep the delicious worms. */
-
+		for (int i = 0; i < stuffIFoundInTheYard.size(); i++) {
+			if(stuffIFoundInTheYard.get(i) instanceof Dirt) {
+				i--;
+				stuffIFoundInTheYard.remove(i);
+			}
+		}
 		System.out.println(stuffIFoundInTheYard.size()); // should be 2
 
 		ArrayList<Character> truth = new ArrayList<Character>();
@@ -58,6 +64,11 @@ public class RemovingStuffFromArrayLists {
 		truth.add('t');
 
 		/* TODO 2: Remove the hash symbols and print out the truth. */
-
+		for (int i = 0; i < truth.size(); i++) {
+			if(truth.get(i) == '#') {
+				i--;
+				truth.remove(i);
+			}
+		}
 	}
 }
